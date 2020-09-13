@@ -1,12 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
-from WebScript_observer.Dispara_Alerta import Boottems
+from WebScript_observer.Dispara_Alerta import email_alert
 import schedule
 import time
 
 def Job():
     #Opcao para rodar o navegador em background
-    Alertar=Boottems('login','senha')
     opcao=Options()
     opcao.headless=True
     driver = webdriver.Firefox(options=opcao)
@@ -61,40 +60,40 @@ def Job():
     Roterizador_com=int(1000)
 
     if Logistica > Logistica_com:
-        print('A fila Logistica esta com %s registros'%(Logistica))
+        email_alert('Alerta BTL_Logistica','A fila Logistica esta com %s Registros'%(Logistica) ,'vitorgomes@patrus.com.br')
         pass
     if Averbacao >Averbacao_com:
-        print('A fila Averbacao esta com %s registros'%(Averbacao))
+        email_alert('Alerta BTL_Averbaçao','A fila Averbaçao esta com %s Registros'%(Averbacao) ,'vitorgomes@patrus.com.br')
         pass
     if B_prioridade > B_prioridade_com:
-        print('A fila de baixa prioridade esta com %s Registros'%(B_prioridade))
+        email_alert('Alerta BTL_Baixa prioridade','A fila Baixa prioridade esta com %s Registros'%(B_prioridade) ,'vitorgomes@patrus.com.br')
         pass
     if Cad_edi > Cad_edi_com:
-        print('A fila de Cad-edi esta com %s Registros'%(Cad_edi))
+        email_alert('Alerta BTL_EDI','A fila EDI esta com %s Registros'%(Cad_edi) ,'vitorgomes@patrus.com.br')
         pass
     if Cte > Cte_com:
-        print('A fila de CTE esta com %s Registros'%(Cte))
+        email_alert('Alerta BTL_CTE','A fila CTE esta com %s Registros'%(Cte) ,'vitorgomes@patrus.com.br')
         pass
     if Edi_nfe > Edi_nfe_com:
-        print('A fila de NFE esta com %s Registros'%(Edi_nfe))
+        email_alert('Alerta BTL_NFE','A fila NFE esta com %s Registros'%(Edi_nfe) ,'vitorgomes@patrus.com.br')
         pass
     if Gv > Gv_com:
-        print('A fila do GV esta com %s Registros'%(Gv))
+        email_alert('Alerta BTL_GV','A fila GV esta com %s Registros'%(Gv) ,'vitorgomes@patrus.com.br')
         pass
     if Mobile > Mobile_com:
-        print('A fila do mobile esta com %s Registros'% (Mobile))
+        email_alert('Alerta BTL_Mobile','A fila Mobile esta com %s Registros'%(Mobile) ,'vitorgomes@patrus.com.br')
 
     if Merli > Merli_com:
-        print('A fila da Merli esta com %s Registros'% (Merli))
+        email_alert('Alerta BTL_Merli','A fila Merli esta com %s Registros'%(Merli) ,'vitorgomes@patrus.com.br')
         pass
     if Padrao > Padrao_com:
-        print('A fila Padrao esta com %s Registros'%(Padrao))
+        email_alert('Alerta BTL_Padrao','A fila Padrao esta com %s Registros'%(Padrao) ,'vitorgomes@patrus.com.br')
         pass
     if Portal > Portal_com:
-        print('A fila do Portal esta com %s Registros'%(Portal))
+        email_alert('Alerta BTL_Porta','A fila do Portal esta com %s Registros'%(Portal) ,'vitorgomes@patrus.com.br')
         pass
     if Roterizador > Roterizador_com:
-        print('A fila do Routerizador esta com %s Registros'%(Roterizador))
+        email_alert('Alerta BTL_Roterizador','A fila Roterizador esta com %s Registros'%(Roterizador) ,'vitorgomes@patrus.com.br')
     else:
 
         driver.quit()
