@@ -11,7 +11,7 @@ def email_alert(subject,body,to):
     password='llcqbkxainwmrzvt'
     msg['from'] = user
 
-    server=smtplib.SMTP('smtp.gmail.com',587)
+    server=smtplib.SMTP('smtp.gmail.com',587) ## Para enviar do Outlok precisa liberar o acesso da conta (smtp.office365.com',587)
     server.starttls()
     server.login(user,password)
     server.send_message(msg)
