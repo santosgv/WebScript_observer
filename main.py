@@ -9,7 +9,6 @@ def Job():
     opcao=Options()
     opcao.headless=True
     driver = webdriver.Firefox(options=opcao)
-
     ## passando o link para o nagevador ##
     driver.get("http://admin:admin@172.31.0.10:8161/admin")
     print(driver.title)
@@ -48,61 +47,58 @@ def Job():
     ## comparando
     Logistica_com=int(1000)
     Averbacao_com=int(1000)
-    B_prioridade_com=int(1000)
-    Cad_edi_com=int(1000)
+    B_prioridade_com=int(3000)
+    Cad_edi_com=int(3000)
     Cte_com=int(1000)
-    Edi_nfe_com=int(1000)
-    Gv_com=int(1000)
-    Merli_com=int(1000)
+    Edi_nfe_com=int(100)
+    Gv_com=int(3000)
+    Merli_com=int(100)
     Mobile_com=int(1000)
     Padrao_com=int(1000)
-    Portal_com=int(1000)
-    Roterizador_com=int(1000)
+    Portal_com=int(100)
+    Roterizador_com=int(50)
 
     if Logistica > Logistica_com:
-        email_alert('Alerta BTL_Logistica','A fila Logistica esta com %s Registros'%(Logistica) ,'vitorgomes@patrus.com.br')
+        email_alert('Alerta BTL_Logistica','A fila Logistica esta com %s Registros'%(Logistica) ,'projeto.aurora@patrus.com.br')
         pass
     if Averbacao >Averbacao_com:
-        email_alert('Alerta BTL_Averbaçao','A fila Averbaçao esta com %s Registros'%(Averbacao) ,'vitorgomes@patrus.com.br')
+        email_alert('Alerta BTL_Averbaçao','A fila Averbaçao esta com %s Registros'%(Averbacao) ,'projeto.aurora@patrus.com.br')
         pass
     if B_prioridade > B_prioridade_com:
-        email_alert('Alerta BTL_Baixa prioridade','A fila Baixa prioridade esta com %s Registros'%(B_prioridade) ,'vitorgomes@patrus.com.br')
+        email_alert('Alerta BTL_Baixa prioridade','A fila Baixa prioridade esta com %s Registros'%(B_prioridade) ,'projeto.aurora@patrus.com.br')
         pass
     if Cad_edi > Cad_edi_com:
-        email_alert('Alerta BTL_EDI','A fila EDI esta com %s Registros'%(Cad_edi) ,'vitorgomes@patrus.com.br')
+        email_alert('Alerta BTL_EDI','A fila EDI esta com %s Registros'%(Cad_edi) ,'projeto.aurora@patrus.com.br')
         pass
     if Cte > Cte_com:
-        email_alert('Alerta BTL_CTE','A fila CTE esta com %s Registros'%(Cte) ,'vitorgomes@patrus.com.br')
+        email_alert('Alerta BTL_CTE','A fila CTE esta com %s Registros'%(Cte) ,'projeto.aurora@patrus.com.br')
         pass
     if Edi_nfe > Edi_nfe_com:
-        email_alert('Alerta BTL_NFE','A fila NFE esta com %s Registros'%(Edi_nfe) ,'vitorgomes@patrus.com.br')
+        email_alert('Alerta BTL_NFE','A fila NFE esta com %s Registros'%(Edi_nfe) ,'projeto.aurora@patrus.com.br')
         pass
     if Gv > Gv_com:
-        email_alert('Alerta BTL_GV','A fila GV esta com %s Registros'%(Gv) ,'vitorgomes@patrus.com.br')
+        email_alert('Alerta BTL_GV','A fila GV esta com %s Registros'%(Gv) ,'projeto.aurora@patrus.com.br')
         pass
     if Mobile > Mobile_com:
-        email_alert('Alerta BTL_Mobile','A fila Mobile esta com %s Registros'%(Mobile) ,'vitorgomes@patrus.com.br')
+        email_alert('Alerta BTL_Mobile','A fila Mobile esta com %s Registros'%(Mobile) ,'projeto.aurora@patrus.com.br')
 
     if Merli > Merli_com:
-        email_alert('Alerta BTL_Merli','A fila Merli esta com %s Registros'%(Merli) ,'vitorgomes@patrus.com.br')
+        email_alert('Alerta BTL_Merli','A fila Merli esta com %s Registros'%(Merli) ,'projeto.aurora@patrus.com.br')
         pass
     if Padrao > Padrao_com:
-        email_alert('Alerta BTL_Padrao','A fila Padrao esta com %s Registros'%(Padrao) ,'vitorgomes@patrus.com.br')
+        email_alert('Alerta BTL_Padrao','A fila Padrao esta com %s Registros'%(Padrao) ,'projeto.aurora@patrus.com.br')
         pass
     if Portal > Portal_com:
-        email_alert('Alerta BTL_Porta','A fila do Portal esta com %s Registros'%(Portal) ,'vitorgomes@patrus.com.br')
+        email_alert('Alerta BTL_Porta','A fila do Portal esta com %s Registros'%(Portal) ,'projeto.aurora@patrus.com.br')
         pass
     if Roterizador > Roterizador_com:
-        email_alert('Alerta BTL_Roterizador','A fila Roterizador esta com %s Registros'%(Roterizador) ,'vitorgomes@patrus.com.br')
+        email_alert('Alerta BTL_Roterizador','A fila Roterizador esta com %s Registros'%(Roterizador) ,'projeto.aurora@patrus.com.br')
     else:
 
         driver.quit()
 
     driver.quit()
 
-## Repitir script
-
 schedule.every(10).minutes.do(Job)
 while True:
     schedule.run_pending()
-    time.sleep(1)
