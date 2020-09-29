@@ -4,11 +4,12 @@ import Dispara_Alerta
 import schedule
 import time
 
+
 def Job():
     #Opcao para rodar o navegador em background
     opcao=Options()
     opcao.headless=True
-    driver = webdriver.Firefox(options=opcao)
+    driver = webdriver.Firefox(options=opcao)#options=opcao
     ## passando o link para o nagevador ##
     driver.get("http://admin:admin@172.31.0.10:8161/admin")
     print(driver.title)
@@ -99,6 +100,8 @@ def Job():
 
     driver.quit()
 
-schedule.every(10).minutes.do(Job)
-while True:
-    schedule.run_pending()
+    schedule.every(10).minutes.do(Job)
+    while True:
+        schedule.run_pending()
+
+
